@@ -2,6 +2,7 @@ import 'package:animation_overview/animation/animated_align.dart';
 import 'package:animation_overview/animation/animated_container.dart';
 import 'package:animation_overview/animation/animated_padding.dart';
 import 'package:animation_overview/animation/animated_positioned.dart';
+import 'package:animation_overview/animation/animated_slide.dart';
 import 'package:animation_overview/animation/animated_switcher.dart';
 import 'package:flutter/material.dart';
 
@@ -42,7 +43,10 @@ class MyApp extends StatelessWidget {
         return const AnimatedAlignWidget();
       },
       "AnimatedSwitcherWidget": (BuildContext context) {
-        return const AnimatedSwitcherWidget();
+        return  AnimatedSwitcherWidget("AnimatedSwitcherWidget");
+      },
+      "AnimatedSlideWidget": (BuildContext context) {
+        return  AnimatedSlideWidget("AnimatedSlideWidget");
       },
     };
   }
@@ -93,6 +97,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.of(context).pushNamed("AnimatedSwitcherWidget");
                   },
                   child: const Text("AnimatedSwitcher")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("AnimatedSlideWidget");
+                  },
+                  child: const Text("AnimatedSlide")),
             ],
           )
         ),

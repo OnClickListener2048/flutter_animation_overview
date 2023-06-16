@@ -1,10 +1,11 @@
 import 'dart:math';
 
+import 'package:animation_overview/BasefulWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/src/routes/default_transitions.dart';
 
-class AnimatedSwitcherWidget extends StatefulWidget {
-  const AnimatedSwitcherWidget({Key? key}) : super(key: key);
+class AnimatedSwitcherWidget extends BasefulWidget {
+  AnimatedSwitcherWidget(super.title, {super.key});
+
 
   @override
   State<AnimatedSwitcherWidget> createState() => _AnimatedSwitcherWidgetState();
@@ -17,7 +18,7 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("AnimatedSwitcher"),
+        title:  Text(widget.title),
       ),
       body: Column(
         children: [
