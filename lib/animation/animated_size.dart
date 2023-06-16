@@ -1,7 +1,9 @@
+import 'package:animation_overview/BasefulWidget.dart';
 import 'package:flutter/material.dart';
 
-class AnimatedSizeWidget extends StatefulWidget {
-  const AnimatedSizeWidget({Key? key}) : super(key: key);
+class AnimatedSizeWidget extends BasefulWidget {
+  AnimatedSizeWidget(super.title, {super.key});
+
 
   @override
   State<AnimatedSizeWidget> createState() => _AnimatedSizeWidgetState();
@@ -14,7 +16,7 @@ class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("AnimatedSize"),
+        title:  Text(widget.title),
       ),
       body: Container(
         color: Colors.amber,
@@ -27,8 +29,8 @@ class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
                 duration: const Duration(milliseconds: 500),
                 child: Container(
                   width: expand ? 200 : 100,
-                  height: expand ? 100 : 100,
-                  color: Colors.amber,
+                  height: expand ? 200 : 100,
+                  color: Colors.blue,
                 ),
               ),
               ElevatedButton(
@@ -37,7 +39,7 @@ class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
                       expand = !expand;
                     });
                   },
-                  child: Text(expand ? "expand" : "shrink"))
+                  child: Text(expand ? "shrink" : "expand"))
             ],
           ),
         ),
