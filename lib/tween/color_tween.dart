@@ -28,6 +28,7 @@ class _ColorTweenWidgetState extends State<ColorTweenWidget> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colorTween.transform(scrollOffset / 200),
