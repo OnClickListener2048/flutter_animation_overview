@@ -1,7 +1,10 @@
 import 'package:animation_overview/animation/animated_align.dart';
 import 'package:animation_overview/animation/animated_container.dart';
+import 'package:animation_overview/animation/animated_opacity.dart';
 import 'package:animation_overview/animation/animated_padding.dart';
 import 'package:animation_overview/animation/animated_positioned.dart';
+import 'package:animation_overview/animation/animated_rotation.dart';
+import 'package:animation_overview/animation/animated_scale.dart';
 import 'package:animation_overview/animation/animated_size.dart';
 import 'package:animation_overview/animation/animated_slide.dart';
 import 'package:animation_overview/animation/animated_switcher.dart';
@@ -51,6 +54,13 @@ class MyApp extends StatelessWidget {
       },
       "AnimatedSizeWidget": (BuildContext context) {
         return  AnimatedSizeWidget("AnimatedSizeWidget");
+      },
+      "AnimatedOpacityWidget": (BuildContext context) {
+        return  AnimatedOpacityWidget("AnimatedOpacityWidget");
+      },   "AnimatedRotationWidget": (BuildContext context) {
+        return  AnimatedRotationWidget("AnimatedRotationWidget");
+      },"AnimatedScaleWidget": (BuildContext context) {
+        return  AnimatedScaleWidget("AnimatedScaleWidget");
       },
     };
   }
@@ -111,6 +121,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.of(context).pushNamed("AnimatedSizeWidget");
                   },
                   child: const Text("AnimatedSize")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("AnimatedOpacityWidget");
+                  },
+                  child: const Text("AnimatedOpacity")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("AnimatedRotationWidget");
+                  },
+                  child: const Text("AnimatedRotation")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("AnimatedScaleWidget");
+                  },
+                  child: const Text("AnimatedScale")),
             ],
           )
         ),

@@ -10,7 +10,8 @@ class AnimatedSizeWidget extends BasefulWidget {
 }
 
 class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
-  bool expand = false;
+  double _size = 50.0;
+  bool _large = false;
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +27,22 @@ class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               AnimatedSize(
+                curve: Curves.bounceIn,
                 duration: const Duration(milliseconds: 500),
                 child: Container(
-                  width: expand ? 200 : 100,
-                  height: expand ? 200 : 100,
+                  width: _size,
+                  height: _size,
                   color: Colors.blue,
                 ),
               ),
               ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      expand = !expand;
+                      _size = _large ? 250.0 : 100.0;
+                      _large = !_large;
                     });
                   },
-                  child: Text(expand ? "shrink" : "expand"))
+                  child: Text("expand"))
             ],
           ),
         ),
