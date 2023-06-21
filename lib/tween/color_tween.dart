@@ -17,8 +17,7 @@ class _ColorTweenWidgetState extends State<ColorTweenWidget> {
   void initState() {
     super.initState();
     colorTween = ColorTween(begin: Colors.blue, end: Colors.amber);
-    controller = ScrollController();
-    controller.addListener(() {
+    controller = ScrollController()..addListener(() {
       setState(() {
         print("controller.offset ${controller.offset}");
         scrollOffset = controller.offset;
